@@ -1,14 +1,9 @@
-# Configuración mínima: toma todos los defaults de SearXNG y solo
-# sobreescribe lo necesario para que nuestro backend pueda usarlo
-# como API (JSON) sin que el limitador de bots lo bloquee.
 use_default_settings: true
 
 general:
   instance_name: "veritas-search"
 
 server:
-  # Clave requerida por SearXNG. No es crítica para este uso (no es
-  # una instancia pública de cara al mundo), pero debe existir.
   secret_key: "cambia-esta-clave-por-cualquier-texto-random-123456"
   limiter: false
   image_proxy: false
@@ -17,7 +12,20 @@ search:
   formats:
     - html
     - json
+
 engines:
+  - name: google
+    disabled: true
+
+  - name: google cse
+    disabled: true
+
+  - name: startpage
+    disabled: true
+
+  - name: brave
+    disabled: true
+
   - name: wikipedia
     disabled: false
 
@@ -31,4 +39,7 @@ engines:
     disabled: false
 
   - name: duckduckgo
+    disabled: false
+
+  - name: yahoo
     disabled: false
