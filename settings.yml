@@ -37,16 +37,16 @@ engines:
 
   - name: qwant
     disabled: false
+    
+  - name: yahoo
+    disabled: false
 
-outgoing:
+  outgoing:
   request_timeout: 15.0
 
 search:
   safe_search: 0
   autocomplete: ""
   default_lang: "en-US"
-  - name: duckduckgo
-    disabled: false
 
-  - name: yahoo
-    disabled: false
+  
