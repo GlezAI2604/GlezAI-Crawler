@@ -1,48 +1,30 @@
 use_default_settings: true
 
 general:
-  instance_name: "veritas-search"
+  instance_name: "GlezAI-Crawler"
 
 server:
-  secret_key: "cambia-esta-clave-por-cualquier-texto-random-123456"
-  limiter: false
+  secret_key: "glezai24-secret-key-render-12345"
+  limiter: false       # Desactiva el bloqueo de IPs/Bots
   image_proxy: false
 
 search:
+  safe_search: 0
   formats:
     - html
-    - json
-  safe_search: 0
-  autocomplete: ""
-  default_lang: "en-US"
+    - json             # Habilita las respuestas en JSON para el backend
 
 engines:
-  - name: google
-    disabled: true
-
-  - name: google cse
-    disabled: true
-
-  - name: startpage
-    disabled: true
-
-  - name: brave
-    disabled: true
-
   - name: wikipedia
+    engine: wikipedia
+    shortcut: wp
     disabled: false
 
-  - name: bing
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
     disabled: false
 
-  - name: mojeek
+  - name: google
+    engine: google
     disabled: false
-
-  - name: qwant
-    disabled: false
-
-  - name: yahoo
-    disabled: false
-
-outgoing:
-  request_timeout: 15.0
